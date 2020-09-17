@@ -1,0 +1,27 @@
+cd /home/ibmdemo/cp4a-labs/mm0100st/
+
+oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
+
+oc new-project demo
+oc new-project stocktrader
+
+oc create -f samples/stocktrader -n stocktrader
+
+/home/ibmdemo/cp4a-labs/shared/startDemo.sh
+
+"solution": "stock-trader",
+
+"kappnav.component.namespaces": "demo",
+
+{
+  "group": "legacy",
+  "kind": "WAS-Traditional-App"
+},
+
+"solution": "stock-trader", 
+
+{
+  "group": "legacy",
+  "kind": "Liberty-App"
+}
+

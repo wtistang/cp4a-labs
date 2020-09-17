@@ -1,0 +1,88 @@
+
+
+oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
+
+kubectl version  
+
+kubectl get componentstatuses
+
+kubectl get nodes
+
+kubectl describe node <nodename>
+
+kubectl get pods 
+
+kubectl get pods --all-namespaces
+
+cd /home/ibmdemo/cp4a-labs/dk0100
+
+docker build . -t simpleapp
+
+cd /home/ibmdemo/cp4a-labs/dk0300
+
+oc new-project dk0300
+
+docker tag simpleapp:latest default-route-openshift-image-registry.apps.demo.ibmdte.net/dk0300/simpleapp:latest 
+
+docker login -u ibmadmin -p $(oc whoami -t) default-route-openshift-image-registry.apps.demo.ibmdte.net
+
+docker push default-route-openshift-image-registry.apps.demo.ibmdte.net/dk0300/simpleapp:latest 
+ 
+cat kube01.yaml
+
+kubectl apply -f kube01.yaml
+
+kubectl get pods 
+
+kubectl get pods -o wide 
+
+kubectl delete pod simpleapp
+
+cat kube02.yaml 
+
+kubectl apply -f kube02.yaml
+
+kubectl get pods -o wide
+
+kubectl get pods  
+
+kubectl delete pod <your first pod name> 
+
+kubectl get pods
+
+kubectl delete pod simpleapp-mrnj5  
+
+kubectl get pods  
+
+kubectl get replicaset
+
+kubectl get pods  
+
+kubectl scale --replicas=5 rs/simpleapp
+
+kubectl get pods
+
+kubectl get pods  
+
+kubectl scale --replicas=2 rs/simpleapp
+
+kubectl get pods
+
+cat kube03.yaml 
+
+kubectl apply -f kube03.yaml 
+
+kubectl get svc
+
+kubectl get svc
+
+kubectl delete svc simpleapp 
+
+kubectl get rs
+
+kubectl delete rs simpleapp
+
+kubectl get pods
+
+
+

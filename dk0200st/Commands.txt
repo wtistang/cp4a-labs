@@ -1,0 +1,12 @@
+
+oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
+
+oc get nodes
+
+kubectl get nodes
+
+oc get pods
+
+oc get pods -–all-namespaces 
+
+
